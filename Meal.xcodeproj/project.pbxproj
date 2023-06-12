@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		B5F380FF2A359BF500A5A764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F380FE2A359BF500A5A764 /* AppDelegate.swift */; };
 		B5F381012A359BF500A5A764 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F381002A359BF500A5A764 /* SceneDelegate.swift */; };
-		B5F381032A359BF500A5A764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F381022A359BF500A5A764 /* ViewController.swift */; };
 		B5F381062A359BF500A5A764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F381042A359BF500A5A764 /* Main.storyboard */; };
 		B5F381082A359BF800A5A764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F381072A359BF800A5A764 /* Assets.xcassets */; };
 		B5F3810B2A359BF800A5A764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F381092A359BF800A5A764 /* LaunchScreen.storyboard */; };
+		B5F381132A359C3100A5A764 /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F381122A359C3100A5A764 /* MealController.swift */; };
+		B5F381152A359C4D00A5A764 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F381142A359C4D00A5A764 /* MealViewModel.swift */; };
+		B5F381172A359CC400A5A764 /* MealViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F381162A359CC400A5A764 /* MealViewModelProtocol.swift */; };
+		B5F381192A359CDB00A5A764 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F381182A359CDB00A5A764 /* MealModel.swift */; };
+		B5F3811C2A35A7E300A5A764 /* MealCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3811A2A35A7E300A5A764 /* MealCategoriesCell.swift */; };
+		B5F3811D2A35A7E300A5A764 /* MealCategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F3811B2A35A7E300A5A764 /* MealCategoriesCell.xib */; };
+		B5F381202A35CF1E00A5A764 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3811E2A35CF1E00A5A764 /* Header.swift */; };
+		B5F381212A35CF1E00A5A764 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F3811F2A35CF1E00A5A764 /* Header.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B5F380FB2A359BF500A5A764 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F380FE2A359BF500A5A764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F381002A359BF500A5A764 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5F381022A359BF500A5A764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5F381052A359BF500A5A764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5F381072A359BF800A5A764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5F3810A2A359BF800A5A764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5F3810C2A359BF800A5A764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5F381122A359C3100A5A764 /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
+		B5F381142A359C4D00A5A764 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
+		B5F381162A359CC400A5A764 /* MealViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModelProtocol.swift; sourceTree = "<group>"; };
+		B5F381182A359CDB00A5A764 /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		B5F3811A2A35A7E300A5A764 /* MealCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategoriesCell.swift; sourceTree = "<group>"; };
+		B5F3811B2A35A7E300A5A764 /* MealCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealCategoriesCell.xib; sourceTree = "<group>"; };
+		B5F3811E2A35CF1E00A5A764 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		B5F3811F2A35CF1E00A5A764 /* Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +72,18 @@
 			children = (
 				B5F380FE2A359BF500A5A764 /* AppDelegate.swift */,
 				B5F381002A359BF500A5A764 /* SceneDelegate.swift */,
-				B5F381022A359BF500A5A764 /* ViewController.swift */,
 				B5F381042A359BF500A5A764 /* Main.storyboard */,
 				B5F381072A359BF800A5A764 /* Assets.xcassets */,
 				B5F381092A359BF800A5A764 /* LaunchScreen.storyboard */,
 				B5F3810C2A359BF800A5A764 /* Info.plist */,
+				B5F381122A359C3100A5A764 /* MealController.swift */,
+				B5F381142A359C4D00A5A764 /* MealViewModel.swift */,
+				B5F381162A359CC400A5A764 /* MealViewModelProtocol.swift */,
+				B5F381182A359CDB00A5A764 /* MealModel.swift */,
+				B5F3811A2A35A7E300A5A764 /* MealCategoriesCell.swift */,
+				B5F3811B2A35A7E300A5A764 /* MealCategoriesCell.xib */,
+				B5F3811E2A35CF1E00A5A764 /* Header.swift */,
+				B5F3811F2A35CF1E00A5A764 /* Header.xib */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -125,6 +146,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F3811D2A35A7E300A5A764 /* MealCategoriesCell.xib in Resources */,
+				B5F381212A35CF1E00A5A764 /* Header.xib in Resources */,
 				B5F3810B2A359BF800A5A764 /* LaunchScreen.storyboard in Resources */,
 				B5F381082A359BF800A5A764 /* Assets.xcassets in Resources */,
 				B5F381062A359BF500A5A764 /* Main.storyboard in Resources */,
@@ -138,9 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F381032A359BF500A5A764 /* ViewController.swift in Sources */,
+				B5F381202A35CF1E00A5A764 /* Header.swift in Sources */,
+				B5F381192A359CDB00A5A764 /* MealModel.swift in Sources */,
+				B5F3811C2A35A7E300A5A764 /* MealCategoriesCell.swift in Sources */,
+				B5F381152A359C4D00A5A764 /* MealViewModel.swift in Sources */,
 				B5F380FF2A359BF500A5A764 /* AppDelegate.swift in Sources */,
+				B5F381132A359C3100A5A764 /* MealController.swift in Sources */,
 				B5F381012A359BF500A5A764 /* SceneDelegate.swift in Sources */,
+				B5F381172A359CC400A5A764 /* MealViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7JG62S5C39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -294,6 +323,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7JG62S5C39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meal/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -321,6 +352,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
