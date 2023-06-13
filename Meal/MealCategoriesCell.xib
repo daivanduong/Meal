@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -43,7 +42,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wZM-ir-hfq" firstAttribute="leading" secondItem="1xI-oY-71N" secondAttribute="leading" constant="5" id="lDz-pQ-cv2"/>
                             <constraint firstAttribute="bottom" secondItem="wZM-ir-hfq" secondAttribute="bottom" constant="5" id="paa-iD-Rmi"/>
@@ -63,13 +62,10 @@
             <size key="customSize" width="268" height="188"/>
             <connections>
                 <outlet property="categoriesName" destination="y2U-Ny-VvQ" id="Kgk-pd-1mG"/>
+                <outlet property="viewCell" destination="1xI-oY-71N" id="G7G-10-jLI"/>
+                <outlet property="viewLb" destination="wZM-ir-hfq" id="IM4-8O-d9Y"/>
             </connections>
             <point key="canvasLocation" x="294.6564885496183" y="37.323943661971832"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

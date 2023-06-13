@@ -18,6 +18,8 @@ final class MealController: UIViewController {
     
     var mealSelect = false
     var drinkSelect = false
+    var keyDrink = ""
+    var keyMeal = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,7 @@ final class MealController: UIViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
         collectionView.reloadData()
-        self.viewModel.reloadCollectionView = { [weak self] in
+        self.viewModel.reloadData = { [weak self] in
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
             }
@@ -52,9 +54,17 @@ final class MealController: UIViewController {
     
     func setupButton() {
         generateBT.layer.cornerRadius = 5
-        generateBT.backgroundColor = .systemIndigo
+        
         generateBT.isEnabled = false
     }
+    
+    
+    @IBAction func tapOnGenerate(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "generateVC")
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 }
 
@@ -65,7 +75,7 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return viewModel.categoriesMeal1?.categories?.count ?? 00
+            return viewModel.categoriesMeal?.categories?.count ?? 00
         } else {
             return viewModel.categoriesDink.count
         }
@@ -74,7 +84,7 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mealCategoriesCell", for: indexPath) as! MealCategoriesCell
         if indexPath.section == 0 {
-            cell.categoriesName.text = viewModel.categoriesMeal1?.categories?[indexPath.row].strCategory
+            cell.categoriesName.text = viewModel.categoriesMeal?.categories?[indexPath.row].strCategory
         } else {
             cell.categoriesName.text = viewModel.categoriesDink[indexPath.row].nameDrink
         }
@@ -110,20 +120,15 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let cell = collectionView.cellForItem(at: indexPath)
         if indexPath.section == 0 {
-            let name = viewModel.categoriesMeal1?.categories?[indexPath.row].strCategory
-            print(name!)
-            cell?.contentView.layer.borderWidth = 5
-            cell?.contentView.layer.borderColor = UIColor.black.cgColor
+            keyMeal = viewModel.categoriesMeal?.categories?[indexPath.row].strCategory ?? ""
+            UserDefaults.standard.set(keyMeal, forKey: "Categories_Meal")
             mealSelect = true
+
         } else {
-            let name = viewModel.categoriesDink[indexPath.row].nameDrink
-            print(name)
-            cell?.contentView.layer.borderWidth = 5
-            cell?.contentView.layer.borderColor = UIColor.blue.cgColor
             drinkSelect = true
+            keyDrink = viewModel.categoriesDink[indexPath.row].nameDrink
+            UserDefaults.standard.set(keyDrink, forKey: "Categories_Drink")
         }
         if mealSelect == true {
             if drinkSelect == true {
@@ -132,15 +137,24 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
             }
         }
     }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        collectionView.indexPathsForSelectedItems?.filter({ $0.section == indexPath.section }).forEach({ collectionView.deselectItem(at: $0, animated: false) })
+        
+        return true
+    }
+    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        generateBT.isEnabled = false
+        generateBT.backgroundColor = .secondaryLabel
         if indexPath.section == 0 {
-            cell?.contentView.layer.borderWidth = 0
+            mealSelect = false
         } else {
-            cell?.contentView.layer.borderWidth = 0
+            drinkSelect = false
         }
         
+        return true
     }
+    
     
     
 }

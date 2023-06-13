@@ -8,7 +8,9 @@ import Foundation
 import CoreLocation
 
 protocol MealViewModelProtocol {
-    var categoriesMeal: CategoriesMeal? { get }
+    var categoriesMealData: CategoriesMeal? { get }
 
     func getDataAPICategoriesMeal()
+    func generateMeal (key: String)
+    func generateDrink (key: String)
 }
