@@ -7,16 +7,13 @@
 
 import Foundation
 
+ class MealViewModel: MealViewModelProtocol {
 
-final class MealViewModel: MealViewModelProtocol {
-    
     var categoriesMeal: CategoriesMeal?
+    var categoriesDink: CategoriesDink?
     var reloadData: (() -> Void)?
-    var categoriesDink = [DrinkCategories]()
     var mealModel: MealModel?
     var drinkModel: DrinkModel?
-    var keyMeal: String?
-    var keyDrink: String?
 
 }
 
@@ -30,13 +27,6 @@ extension MealViewModel {
                 self?.reloadData?()
             }
         }.resume()
-       
-    }
-    
-    func getDataDrink() {
-        let categories = [DrinkCategories(idDrink: 1, nameDrink: "Cocktail"), DrinkCategories(idDrink: 2, nameDrink: "Shot"),DrinkCategories(idDrink: 3, nameDrink: "Shake"),DrinkCategories(idDrink: 4, nameDrink: "Cocoa"), DrinkCategories(idDrink: 5, nameDrink: "Beer"), DrinkCategories(idDrink: 6, nameDrink: "Ordinary_Drink")]
-        self.categoriesDink = categories
-//        self.reloadData?()
     }
     
     var categoriesMealData: CategoriesMeal? {
@@ -44,30 +34,58 @@ extension MealViewModel {
         return categoriesMeal
     }
     
+    func getDataAPICategoriesDrink() {
+        let urlApi = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")!
+        URLSession.shared.dataTask(with: urlApi) { [weak self] data, reponse, error in
+            if let data = data {
+                let categoriesData = try! JSONDecoder().decode(CategoriesDink.self, from: data)
+                self?.categoriesDink = categoriesData
+                self?.reloadData?()
+            }
+        }.resume()
+    }
+    
+    
+    var categoriesDrinkData: CategoriesDink? {
+        getDataAPICategoriesDrink()
+        reloadData?()
+        return categoriesDink
+    }
+    
     func generateMeal (key: String) {
-        URLSession.shared.dataTask(with: URL(string: "https:www.themealdb.com/api/json/v1/1/filter.php?c=\(key)")!) { [weak self] data, response , error in
+        URLSession.shared.dataTask(with: URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=\(key)")!) { [weak self] data, response , error in
             if let data = data {
                 let mealData = try! JSONDecoder().decode(MealModel.self, from: data)
                 self?.mealModel = mealData
                 self?.reloadData?()
             }
-            
         } .resume()
     }
     
     func generateDrink (key: String) {
-        URLSession.shared.dataTask(with: URL(string: "https:www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(key)")!) { [weak self] data, response , error in
+        let url = URLComponents(queryItems: [URLQueryItem(name: "c", value: key)]).url!
+        URLSession.shared.dataTask(with: URL(string: "\(url)")!) { [weak self] data, response , error in
             if let data = data {
                 let drinkData = try! JSONDecoder().decode(DrinkModel?.self, from: data)
                 self?.drinkModel = drinkData
                 self?.reloadData?()
             }
         } .resume()
-        
     }
-    
-    
-    
+
+}
+
+extension URLComponents {
+    init(scheme: String = "https",
+         host: String = "www.thecocktaildb.com",
+         path: String = "/api/json/v1/1/filter.php",
+         queryItems: [URLQueryItem]) {
+        self.init()
+        self.scheme = scheme
+        self.host = host
+        self.path = path
+        self.queryItems = queryItems
+    }
 }
 
 

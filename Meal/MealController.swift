@@ -11,15 +11,13 @@ final class MealController: UIViewController {
     
     
     var viewModel = MealViewModel()
-    var viewModelTest: MealViewModelProtocol!
+    var viewModelTest: MealViewModelProtocol?
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var generateBT: UIButton!
     
     var mealSelect = false
     var drinkSelect = false
-    var keyDrink = ""
-    var keyMeal = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +38,30 @@ final class MealController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
-        collectionView.reloadData()
-        self.viewModel.reloadData = { [weak self] in
-            DispatchQueue.main.async {
-                self?.collectionView.reloadData()
-            }
-        }
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         viewModel.getDataAPICategoriesMeal()
-        viewModel.getDataDrink()
-        //viewModelTest.getDataAPICategoriesMeal()
+        //viewModelTest?.getDataAPICategoriesDrink()
+        viewModel.getDataAPICategoriesDrink()
+        dispatchGroup.leave()
+        dispatchGroup.notify(queue: .main) {
+            self.viewModel.reloadData = { [weak self] in
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            }
+//            self.viewModelTest?.reloadData = { [weak self] in
+//                DispatchQueue.main.async {
+//                    self?.collectionView.reloadData()
+//                }
+//            }
+        }
 
     }
     
     func setupButton() {
         generateBT.layer.cornerRadius = 5
-        
         generateBT.isEnabled = false
     }
     
@@ -75,9 +82,10 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return viewModel.categoriesMeal?.categories?.count ?? 00
+            return viewModel.categoriesMeal?.categories?.count ?? 0
         } else {
-            return viewModel.categoriesDink.count
+            return viewModel.categoriesDink?.drinks?.count ?? 0
+            //return viewModelTest?.categoriesDrinkData?.drinks?.count ?? 0
         }
     }
     
@@ -86,7 +94,7 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if indexPath.section == 0 {
             cell.categoriesName.text = viewModel.categoriesMeal?.categories?[indexPath.row].strCategory
         } else {
-            cell.categoriesName.text = viewModel.categoriesDink[indexPath.row].nameDrink
+            cell.categoriesName.text = viewModel.categoriesDink?.drinks?[indexPath.row].strCategory
         }
         return cell
     }
@@ -121,14 +129,14 @@ extension MealController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            keyMeal = viewModel.categoriesMeal?.categories?[indexPath.row].strCategory ?? ""
+            let keyMeal = viewModel.categoriesMeal?.categories?[indexPath.row].strCategory ?? ""
             UserDefaults.standard.set(keyMeal, forKey: "Categories_Meal")
             mealSelect = true
 
         } else {
-            drinkSelect = true
-            keyDrink = viewModel.categoriesDink[indexPath.row].nameDrink
+            let keyDrink = viewModel.categoriesDink?.drinks?[indexPath.row].strCategory ?? ""
             UserDefaults.standard.set(keyDrink, forKey: "Categories_Drink")
+            drinkSelect = true
         }
         if mealSelect == true {
             if drinkSelect == true {

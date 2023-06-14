@@ -29,24 +29,21 @@ struct Meals: Codable {
 
 }
 
-class DrinkCategories {
-    let idDrink: Int
-    let nameDrink: String
-    
-    init(idDrink: Int, nameDrink: String) {
-        self.idDrink = idDrink
-        self.nameDrink = nameDrink
-    }
+struct CategoriesDink: Codable {
+    var drinks: [Drinks]?
 }
 
+struct Drinks: Codable {
+    var strCategory: String?
+}
 
-class DrinkModel: Codable {
+struct DrinkModel: Codable {
   
     var drinks: [Drink]?
     
 }
 
-class Drink: Codable {
+struct Drink: Codable {
     var strDrink: String
     var strDrinkThumb: String
     var idDrink: String

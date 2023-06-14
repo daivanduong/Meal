@@ -26,12 +26,13 @@ class GenerateVC: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "tableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         if let keyMeal = UserDefaults.standard.string(forKey: "Categories_Meal") {
             viewModel.generateMeal(key: keyMeal)
         }
+        dispatchGroup.leave()
+        dispatchGroup.enter()
         if let keyDrink = UserDefaults.standard.string(forKey: "Categories_Drink") {
             viewModel.generateDrink(key: keyDrink)
         }
@@ -59,19 +60,17 @@ extension GenerateVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! TableViewCell
-        let meal_Diner = viewModel.mealModel?.meals?.randomElement()
-        let drink_Diner = viewModel.drinkModel?.drinks?.randomElement()
 
         if indexPath.section == 0 {
-            cell.lbName.text = meal_Diner?.strMeal
-            if let url = URL(string: "\(meal_Diner?.strMealThumb ?? "")") {
+            cell.lbName.text = viewModel.mealModel?.meals?.randomElement()?.strMeal
+            if let url = URL(string: "\(viewModel.mealModel?.meals?.randomElement()?.strMealThumb ?? "")") {
                 cell.img.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
             }
             cell.lbCategories.text = UserDefaults.standard.string(forKey: "Categories_Meal")
             
         } else {
-            cell.lbName.text = drink_Diner?.strDrink
-            if let url = URL(string: "\(drink_Diner?.strDrinkThumb ?? "")") {
+            cell.lbName.text = viewModel.drinkModel?.drinks?.randomElement()?.strDrink
+            if let url = URL(string: "\(viewModel.drinkModel?.drinks?.randomElement()?.strDrinkThumb ?? "")") {
                 cell.img.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
             }
             cell.lbCategories.text = UserDefaults.standard.string(forKey: "Categories_Drink")
