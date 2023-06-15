@@ -11,7 +11,7 @@ import Foundation
 
     var categoriesMeal: CategoriesMeal?
     var categoriesDink: CategoriesDink?
-    var reloadData: (() -> Void)?
+    var reloadData: (() -> ())?
     var mealModel: MealModel?
     var drinkModel: DrinkModel?
 

@@ -9,7 +9,7 @@ import Foundation
 protocol MealViewModelProtocol {
     var categoriesMealData: CategoriesMeal? { get }
     var categoriesDrinkData: CategoriesDink? { get }
-    var reloadData: (() -> Void)? { get set }
+    var reloadData: (() -> ())? { get set }
 
     func getDataAPICategoriesMeal()
     func getDataAPICategoriesDrink()
