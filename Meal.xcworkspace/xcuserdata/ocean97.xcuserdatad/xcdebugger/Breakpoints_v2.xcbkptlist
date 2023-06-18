@@ -3,4 +3,228 @@
    uuid = "1FC173AA-580B-4266-9C01-842A65F74AB0"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17B9A371-D130-4297-AC6C-249660B31DCD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meal/MealViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "isSelectCell(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E21FF45-DE56-4D1E-AB61-9DBDD843EFE7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meal/MealViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "isSelectCell(index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E21FF45-DE56-4D1E-AB61-9DBDD843EFE7 - 52af946ff7fbe262"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meal.MealViewModel.numberOfItemsInSection(section: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "402">
+               </Location>
+               <Location
+                  uuid = "7E21FF45-DE56-4D1E-AB61-9DBDD843EFE7 - efd75a99a3f023ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meal.MealViewModel.isSelectCell(index: Swift.Int) -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "171">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84C9CC28-8107-42A3-BC5A-875BAA2CB5A8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meal/MealController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setupButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84C9CC28-8107-42A3-BC5A-875BAA2CB5A8 - dad1abaf025ca568"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meal.MealController.setupButton() -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "84C9CC28-8107-42A3-BC5A-875BAA2CB5A8 - dad1abaf025ca549"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meal.MealController.setupButton() -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "84C9CC28-8107-42A3-BC5A-875BAA2CB5A8 - ad590f447636d3fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Meal.MealController.setupButton() -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B86303E-94B0-4814-ACD3-2F843FF5B5F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meal/MealController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setupButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9B86303E-94B0-4814-ACD3-2F843FF5B5F7 - dad1abaf025ca549"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meal.MealController.setupButton() -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "785">
+               </Location>
+               <Location
+                  uuid = "9B86303E-94B0-4814-ACD3-2F843FF5B5F7 - ad590f447636d3fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Meal.MealController.setupButton() -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  uuid = "9B86303E-94B0-4814-ACD3-2F843FF5B5F7 - dad1abaf025ca549"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meal.MealController.setupButton() -&gt; ()"
+                  moduleName = "Meal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/IOS/Meal/Meal/MealController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "352">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0EAB2AE5-E9E2-4DF0-8DD7-AB4673B88A46"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meal/MealViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "isSelectCell(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A451F80-C459-4793-8EB1-887B1C1676FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meal/MealViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "isChecked()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

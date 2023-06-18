@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		35A495C7732FB110FA18C6B2 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496FA8B87DD497CA106037F /* Pods_Meal.framework */; };
+		B5B5E3542A3F030B0095A9CA /* GenerateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5E3532A3F030B0095A9CA /* GenerateViewModel.swift */; };
+		B5B5E3562A3F03210095A9CA /* GenerateViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5E3552A3F03210095A9CA /* GenerateViewModelProtocol.swift */; };
 		B5BF86672A37FFAE001BAB8B /* GenerateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BF86662A37FFAE001BAB8B /* GenerateVC.swift */; };
 		B5BF866A2A38085F001BAB8B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BF86682A38085F001BAB8B /* TableViewCell.swift */; };
 		B5BF866B2A38085F001BAB8B /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5BF86692A38085F001BAB8B /* TableViewCell.xib */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		0496FA8B87DD497CA106037F /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EE4584AD60BB4189817721 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		B5B5E3532A3F030B0095A9CA /* GenerateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewModel.swift; sourceTree = "<group>"; };
+		B5B5E3552A3F03210095A9CA /* GenerateViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewModelProtocol.swift; sourceTree = "<group>"; };
 		B5BF86662A37FFAE001BAB8B /* GenerateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateVC.swift; sourceTree = "<group>"; };
 		B5BF86682A38085F001BAB8B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B5BF86692A38085F001BAB8B /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -71,6 +75,51 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B5B5E34F2A3F01E70095A9CA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B5F381162A359CC400A5A764 /* MealViewModelProtocol.swift */,
+				B5F381142A359C4D00A5A764 /* MealViewModel.swift */,
+				B5B5E3532A3F030B0095A9CA /* GenerateViewModel.swift */,
+				B5B5E3552A3F03210095A9CA /* GenerateViewModelProtocol.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B5B5E3502A3F01F30095A9CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5F3811F2A35CF1E00A5A764 /* Header.xib */,
+				B5BF86692A38085F001BAB8B /* TableViewCell.xib */,
+				B5F3811B2A35A7E300A5A764 /* MealCategoriesCell.xib */,
+				B5BF86682A38085F001BAB8B /* TableViewCell.swift */,
+				B5BF86662A37FFAE001BAB8B /* GenerateVC.swift */,
+				B5F3811E2A35CF1E00A5A764 /* Header.swift */,
+				B5F3811A2A35A7E300A5A764 /* MealCategoriesCell.swift */,
+				B5F381122A359C3100A5A764 /* MealController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5B5E3512A3F02000095A9CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5F381182A359CDB00A5A764 /* MealModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5B5E3522A3F02190095A9CA /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				B5F381002A359BF500A5A764 /* SceneDelegate.swift */,
+				B5F380FE2A359BF500A5A764 /* AppDelegate.swift */,
+				B5F381042A359BF500A5A764 /* Main.storyboard */,
+				B5F381092A359BF800A5A764 /* LaunchScreen.storyboard */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		B5F380F22A359BF500A5A764 = {
 			isa = PBXGroup;
 			children = (
@@ -92,23 +141,12 @@
 		B5F380FD2A359BF500A5A764 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
-				B5F380FE2A359BF500A5A764 /* AppDelegate.swift */,
-				B5F381002A359BF500A5A764 /* SceneDelegate.swift */,
-				B5F381042A359BF500A5A764 /* Main.storyboard */,
+				B5B5E3522A3F02190095A9CA /* Others */,
+				B5B5E3512A3F02000095A9CA /* Models */,
+				B5B5E3502A3F01F30095A9CA /* Views */,
+				B5B5E34F2A3F01E70095A9CA /* ViewModels */,
 				B5F381072A359BF800A5A764 /* Assets.xcassets */,
-				B5F381092A359BF800A5A764 /* LaunchScreen.storyboard */,
 				B5F3810C2A359BF800A5A764 /* Info.plist */,
-				B5F381122A359C3100A5A764 /* MealController.swift */,
-				B5F381142A359C4D00A5A764 /* MealViewModel.swift */,
-				B5F381162A359CC400A5A764 /* MealViewModelProtocol.swift */,
-				B5F381182A359CDB00A5A764 /* MealModel.swift */,
-				B5F3811A2A35A7E300A5A764 /* MealCategoriesCell.swift */,
-				B5F3811B2A35A7E300A5A764 /* MealCategoriesCell.xib */,
-				B5F3811E2A35CF1E00A5A764 /* Header.swift */,
-				B5F3811F2A35CF1E00A5A764 /* Header.xib */,
-				B5BF86662A37FFAE001BAB8B /* GenerateVC.swift */,
-				B5BF86682A38085F001BAB8B /* TableViewCell.swift */,
-				B5BF86692A38085F001BAB8B /* TableViewCell.xib */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -244,11 +282,13 @@
 				B5F3811C2A35A7E300A5A764 /* MealCategoriesCell.swift in Sources */,
 				B5F381152A359C4D00A5A764 /* MealViewModel.swift in Sources */,
 				B5F380FF2A359BF500A5A764 /* AppDelegate.swift in Sources */,
+				B5B5E3542A3F030B0095A9CA /* GenerateViewModel.swift in Sources */,
 				B5BF866A2A38085F001BAB8B /* TableViewCell.swift in Sources */,
 				B5F381132A359C3100A5A764 /* MealController.swift in Sources */,
 				B5BF86672A37FFAE001BAB8B /* GenerateVC.swift in Sources */,
 				B5F381012A359BF500A5A764 /* SceneDelegate.swift in Sources */,
 				B5F381172A359CC400A5A764 /* MealViewModelProtocol.swift in Sources */,
+				B5B5E3562A3F03210095A9CA /* GenerateViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
